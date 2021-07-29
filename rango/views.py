@@ -13,6 +13,7 @@ def index(request):
     # that will be passed to the template engine.
 
     category_list = Category.objects.order_by('-likes')[:5]
+    page_list = Page.objects.order_by('-views')[:5]
 
     # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage matches to {{ boldmessage }} in the template!
@@ -20,6 +21,7 @@ def index(request):
     context_dict = {}
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
+    context_dict['pages'] = page_list
 
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
