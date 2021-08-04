@@ -1,27 +1,57 @@
 {% extends 'rango/base.html' %}
-{% load staticfiles %}
+{% load static %}
+{% load bootstrap3 %}
 
 {% block title_block %}
     Register
 {% endblock %}
 
 {% block body_block %}
-<h1>Register for Rango</h1>
-{% if registered %}
-Rango says: <strong>thank you for registering!</strong>
-<a href="{% url 'rango:index' %}">Return to the homepage.</a><br />
-{% else %}
-Rango says: <strong>register here!</strong><br />
-<form id="user_form" method="post" action="{% url 'rango:register' %}"
-      enctype="multipart/form-data">
-
-    {% csrf_token %}
-
-    <!-- Display each form -->
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-    <!-- Provide a button to click to submit the form. -->
-    <input type="submit" name="submit" value="Register" />
-</form>
-{% endif %}
+<link rel="stylesheet" href="{%static '../static/style/login.css'%}">
+<div class="container">
+        <div class="form-container">
+        <p class="form-title">Register for Rango</p>
+        {% if registered %}
+        Rango says: <strong>thank you for registering!</strong>
+        <a href="{% url 'rango:index' %}">Return to the homepage.</a><br />
+        {% else %}
+            <form id="user_form" method="post" action="{% url 'rango:register' %}"
+              enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-body">
+                    <div class="form-item-style">
+                        <div class="form-item-title">
+                            {{ user_form.username.label }}
+                        </div>
+                        <div class="form-group {% if form_obj.username.errors.0 %}has-error{% endif %}">
+                            {{ user_form.username }}
+                        </div>
+                        <span class="help-block item-help">{{ user_form.username.errors.0 }}</span>
+                    </div>
+                    <div class="form-item-style">
+                        <div class="form-item-title">
+                            {{ user_form.password.label }}
+                        </div>
+                        <div class="form-group {% if form_obj.password.errors.0 %}has-error{% endif %}">
+                            {{ user_form.password }}
+                        </div>
+                        <span class="help-block item-help">{{ user_form.password.errors.0 }}</span>
+                    </div>
+                    <div class="form-item-style">
+                        <div class="form-item-title">
+                            {{ user_form.email.label }}
+                        </div>
+                        <div class="form-group {% if form_obj.email.errors.0 %}has-error{% endif %}">
+                            {{ user_form.email }}
+                        </div>
+                        <span class="help-block item-help">{{ user_form.email.errors.0 }}</span>
+                    </div>
+                </div>
+                <!-- Provide a button to click to submit the form. -->
+                <input class="form-btn login-btn-style" type="submit" value="Register" />
+                <a class="form-btn register-btn-style" href="{% url 'rango:login' %}">Login</a>
+            </form>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

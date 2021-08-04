@@ -1,18 +1,30 @@
 {% extends 'rango/base.html' %}
-{% load staticfiles %}
-
+{% load static %}
 {% block title_block %}
-    Login
+Login
 {% endblock %}
-
 {% block body_block %}
-<h1>Login to Rango</h1>
-<form id="login_form" method="post" action="{% url 'rango:login' %}">
-    {% csrf_token %}
-    Username: <input type="text" name="username" value="" size="50" />
-    <br />
-    Password: <input type="password" name="password" value="" size="50" />
-    <br />
-    <input type="submit" value="submit" />
-</form>
+<link rel="stylesheet" href="{%static '../static/style/login.css'%}">
+<div class="container">
+    <div class="form-container">
+        <p class="form-title">Login to Rango</p>
+        <form id="login_form" method="post" action="{% url 'rango:login' %}">
+            {% csrf_token %}
+            <div class="form-body">
+                <div class="form-item-style">
+                    <div class="form-item-title">Account</div>
+                    <input placeholder="Plaese input account" class="form-input" type="text" name="username" value=""/>
+                </div>
+                <div class="form-item-style">
+                    <div class="form-item-title">Password</div>
+                    <input placeholder="Plaese input password" class="form-input" type="password" name="password" value=""/>
+                </div>
+            </div>
+            <div>
+                <input class="form-btn login-btn-style" type="submit" value="Login" />
+                <a class="form-btn register-btn-style" href="{% url 'rango:register' %}">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
