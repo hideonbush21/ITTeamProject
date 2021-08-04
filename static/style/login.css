@@ -1,11 +1,11 @@
 .container{
-    margin: 0;
+    margin: 50px auto;
     background: #fff;
-    position: relative;
+    /*position: relative;*/
     height:460px;
     width: 380px;
-    left: 40%;
-    top: 100px;
+    /*left: 40%;*/
+    /*top: 100px;*/
     text-align: left;
     border: 1px solid #ebedf0;
     box-shadow: 0 4px 12px rgba(0,0,0,.15) ;
@@ -13,7 +13,7 @@
     display: block;
 }
 .form-container{
-    position: absolute;
+    position: relative;
     top: 60px;
     left: 30px;
 }
@@ -33,15 +33,16 @@
     font-size: 14px;
 }
 .form-input {
+    position: relative;
     height: 24px;
-    width: 100%;
+    width: 80%;
     border: solid 1px #efefef;
 }
 .form-btn {
     position: relative;
-    width: 100px;
+    width: 80px;
     height: 30px;
-    margin: 40px 30px;
+    margin: 40px 35px;
     border: solid 1px #efefef;
     display: inline-block;
     font-size: 14px;

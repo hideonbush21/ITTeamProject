@@ -1,0 +1,36 @@
+.box{
+    background-color: white;
+    border: 1px solid #ebedf0;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15) ;
+    border-radius: 2px;
+}
+
+.head-box{
+    position: relative;
+    height: 200px;
+    width: 90%;
+    margin: 50px auto;
+    min-width:1000px;
+}
+
+.body-box{
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    width: 90%;
+    min-width:1000px;
+    margin: 10px auto;
+}
+
+.left-right-box {
+    height: 400px;
+    width: 800px;
+    min-width:300px;
+}
+
+.center-box {
+    height: 400px;
+    width: 100%;
+    min-width:600px;
+    margin: 0 30px;
+}

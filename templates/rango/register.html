@@ -48,8 +48,10 @@
                     </div>
                 </div>
                 <!-- Provide a button to click to submit the form. -->
-                <input class="form-btn login-btn-style" type="submit" value="Register" />
-                <a class="form-btn register-btn-style" href="{% url 'rango:login' %}">Login</a>
+                <div style="position:relative;width: 80%">
+                    <input class="form-btn login-btn-style" type="submit" value="Register" />
+                    <a class="form-btn register-btn-style" href="{% url 'rango:login' %}">Login</a>
+                </div>
             </form>
         {% endif %}
     </div>
