@@ -24,6 +24,7 @@ class Page(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
     url = models.URLField()
+    content = models.CharField(max_length=1024, default='')
     rank = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
 
