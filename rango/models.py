@@ -8,6 +8,7 @@ class Category(models.Model):
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     rank = models.IntegerField(default=0)
+    region = models.CharField(max_length=128)
     slug = models.SlugField(blank=True)
     slug = models.SlugField(unique=True)
 
@@ -24,6 +25,8 @@ class Category(models.Model):
 class Page(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)
+    longitude = models.DecimalField(max_digits=11, decimal_places=7, default=0000.0000000)
+    latitude = models.DecimalField(max_digits=11, decimal_places=7, default=0000.0000000)
     url = models.URLField()
     content = models.CharField(max_length=1024, default='')
     rank = models.IntegerField(default=0)
