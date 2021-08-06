@@ -24,8 +24,8 @@
             {% if ranks %}
                 {% for item in ranks %}
                     <div class="rank-list">
+                        <a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a>
                         <div class="circle-box">{{ item.rank }}</div>
-                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -37,9 +37,11 @@
             {% if views %}
                 {% for item in views %}
                     <div class="rank-list">
-                        <img class="icon" src="{% static 'images/view.png' %}" alt="Picture of Rango" />
-                        <div class="icon-box">{{ item.views }}</div>
                         <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                        <div class="icon-box">
+                            <span class="icon-text">{{ item.views }}</span>
+                            <img class="icon" src="{% static 'images/view.png' %}" alt="Picture of Rango" />
+                        </div>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -51,9 +53,11 @@
             {% if likes %}
                 {% for item in likes %}
                     <div class="rank-list">
-                        <img class="icon" src="{% static 'images/heart.png' %}" alt="Picture of Rango" />
-                        <div class="icon-box">{{ item.likes }}</div>
-                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                        <a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a>
+                        <div class="icon-box">
+                            <span class="icon-text">{{ item.likes }}</span>
+                            <img class="icon" src="{% static 'images/heart.png' %}" alt="Picture of Rango" />
+                        </div>
                     </div>
                 {% endfor %}
             {% endif %}

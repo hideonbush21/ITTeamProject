@@ -16,12 +16,23 @@
             {% for page in pages %}
                 <div class="box head-box">
                     <div class="box-content">
-                        <h2 style="color: #F59A23">{{ category.name }}</h2>
-                        <div><b>rank : {{ page.rank }}</b></div>
-                        <div><b>views : {{ page.views }}</b></div>
+                        <div style="display: flex;align-items: center;
+justify-content: space-between;">
+                            <h2 class="title-color" style="float: left">{{ category.name }}</h2>
+                        <div class="icon-box">
+                            <img class="icon" src="{% static 'images/heart.png' %}" alt="Picture of Rango" />
+                            <span class="icon-text">{{ category.likes }}</span>
+                        </div>
+                        </div>
+
+<!--                        <div><b>rank : {{ page.views }}</b></div>-->
+                        <div style="display: flex"><img class="icon" src="{% static 'images/location.png' %}" alt="Picture of Rango" />
+                        <span class="icon-text">{{ category.region }}</span></div>
+                        <div style="display: flex">QS world university rankings <div class="circle-box">{{ page.rank }}</div></div>
+
                     </div>
                 </div>
-                <div class="box head-box">
+                <div class="box body-box">
                     <div class="box-content">
                         <div><h2>Overview</h2></div>
                         <div>{{ page.content }}</div>
@@ -32,9 +43,9 @@
         {% else %}
             <strong>No pages currently in category.</strong>
         {% endif %}
-        {% if user.is_authenticated %}
-            <a href="{% url 'rango:add_page' category.slug %}">Add Page</a> <br/>
-        {% endif %}
+<!--        {% if user.is_authenticated %}-->
+<!--            <a href="{% url 'rango:add_page' category.slug %}">Add Page</a> <br/>-->
+<!--        {% endif %}-->
     {% else %}
         The specified category does not exist.
     {% endif %}

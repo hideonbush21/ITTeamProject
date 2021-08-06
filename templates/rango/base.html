@@ -20,9 +20,9 @@
 <div>
     <ul>
         {% if user.is_authenticated %}
-        <li style="float: right"><a class="nav-link" href="{% url 'rango:restricted' %}">Restricted Page</a></li>
+<!--        <li style="float: right"><a class="nav-link" href="{% url 'rango:restricted' %}">Restricted Page</a></li>-->
         <li style="float: right"><a class="nav-link" href="{% url 'rango:logout' %}">Logout</a></li>
-        <li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>
+<!--        <li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>-->
         {% else %}
 <!--        <li style="float: right"><a href="{% url 'rango:register' %}">Sign Up</a></li>-->
         <li style="float: right">
