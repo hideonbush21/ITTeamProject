@@ -1,10 +1,14 @@
 import os
 import re
+# import forms
 from datetime import datetime, timedelta
 from django.test import TestCase
 from django.conf import settings
+from django.forms import fields as django_fields
+from . import forms
 from .models import Category, Page
-from django.urls import reverse
+
+# from .. import rango
 
 FAILURE_HEADER = f"{os.linesep}{os.linesep}{os.linesep}================{os.linesep}TwD TEST FAILURE =({os.linesep}================{os.linesep}"
 FAILURE_FOOTER = f"{os.linesep}"
@@ -76,3 +80,49 @@ class ModelTests(TestCase):
         self.assertEqual(page.content, 'This is my favourite University, salute!',
                          f"{FAILURE_HEADER}Tests on the Page model failed. Check you have all required attributes (including those specified in the exercises!), and try again.{FAILURE_FOOTER}")
 
+
+class ConfigurationTests(TestCase):
+    def test_module_exists(self):
+        """
+        Tests that the forms.py module exists in the expected location.
+        """
+        project_path = os.getcwd()
+        rango_app_path = os.path.join(project_path, 'rango')
+        forms_module_path = os.path.join(rango_app_path, 'forms.py')
+
+        self.assertTrue(os.path.exists(forms_module_path),
+                        f"{FAILURE_HEADER}We couldn't find Rango's new forms.py module. This is required to be created at the top of Section 7.2. This module should be storing your two form classes.{FAILURE_FOOTER}")
+
+    def test_category_form_class(self):
+
+        project_path = os.getcwd()
+        rango_app_path = os.path.join(project_path, 'rango')
+        forms_module_path = os.path.join(rango_app_path, 'forms.py')
+
+        self.assertTrue('CategoryForm' in dir(forms),
+                        f"{FAILURE_HEADER}The class CategoryForm could not be found in Rango's forms.py module. Check you have created this class in the correct location, and try again.{FAILURE_FOOTER}")
+
+        from .forms import CategoryForm
+        # category_form = CategoryForm()
+        #
+        # # Do you correctly link Category to CategoryForm?
+        # self.assertEqual(type(category_form.__dict__['instance']), Category,
+        #                  f"{FAILURE_HEADER}The CategoryForm does not link to the Category model. Have a look in the CategoryForm's nested Meta class for the model attribute.{FAILURE_FOOTER}")
+        #
+        # fields = category_form.fields
+        #
+        # expected_fields = {
+        #     'name': django_fields.CharField,
+        #     'views': django_fields.IntegerField,
+        #     'likes': django_fields.IntegerField,
+        #     'rank': django_fields.CharField,
+        #     'region': django_fields.CharField,
+        # }
+        #
+        # for expected_field_name in expected_fields:
+        #     expected_field = expected_fields[expected_field_name]
+        #
+        #     self.assertTrue(expected_field_name in fields.keys(),
+        #                     f"{FAILURE_HEADER}The field '{expected_field_name}' was not found in your CategoryForm implementation. Check you have all required fields, and try again.{FAILURE_FOOTER}")
+        #     self.assertEqual(expected_field, type(fields[expected_field_name]),
+        #                      f"{FAILURE_HEADER}The field '{expected_field_name}' in CategoryForm was not of the expected type '{type(fields[expected_field_name])}'.{FAILURE_FOOTER}")
