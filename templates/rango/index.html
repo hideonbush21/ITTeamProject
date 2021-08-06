@@ -1,54 +1,77 @@
+
 {% extends 'rango/base.html' %}
 {% load static %} <!-- New line -->
 
 {% block title_block %}
-    Homepage
+    About Rango
 {% endblock %}
 
 {% block body_block %}
 <link rel="stylesheet" href="{%static '../static/style/home.css'%}">
-<link rel="stylesheet" href="{%static '../static/style/table.css'%}">
-<script src="{%static '../static/js/table.js'%}" type="text/javascript" charset="utf-8"></script>
-
-
-    <div class="box head-box">
-
+<div class="box head-box">
+    <div class="box-content">
+        <h1 class="title-color">
+        Welcome to PickMeUp University Information Website!
+        </h1>
+    <h3 class="sub-title-color">Here, you can get a more extensive list of universities.
+    </h3>
+    <h3 class="sub-title-color">Check it out!</h3>
     </div>
-    <div class="box body-box">
-        {% if ranks %}
-
-        <table class="altrowstable" id="alternatecolor">
-            <tr>
-	            <th>Rank</th><th>University</th><th>Region</th>
-            </tr>
-
-            {% for category in ranks %}
-                <tr>
-                    <td>{{ category.rank }}</td>
-                    <td><a class="list" href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></td>
-                    <td>{{ category.region }}</td>
-                </tr>
-            {% endfor %}
-
-        </table>
-         {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
+</div>
+<div class="body-box">
+    <div class="box left-right-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 in QS</h3>
+            {% if ranks %}
+                {% for item in ranks %}
+                    <div class="rank-list">
+                        <a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a>
+                        <div class="circle-box">{{ item.rank }}</div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
+    <div class="box center-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 most viewers</h3>
+            {% if views %}
+                {% for item in views %}
+                    <div class="rank-list">
+                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                        <div class="icon-box">
+                            <span class="icon-text">{{ item.views }}</span>
+                            <img class="icon" src="{% static 'images/view.png' %}" alt="Picture of Rango" />
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="box left-right-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 most favourite</h3>
+            {% if likes %}
+                {% for item in likes %}
+                    <div class="rank-list">
+                        <a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a>
+                        <div class="icon-box">
+                            <span class="icon-text">{{ item.likes }}</span>
+                            <img class="icon" src="{% static 'images/heart.png' %}" alt="Picture of Rango" />
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
 
-{#    <div>#}
-{#        <h2>Most Viewed Pages</h2>#}
-{#        {% if pages %}#}
-{#            <ul>#}
-{#                {% for page in pages %}#}
-{#                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
-{#        {% else %}#}
-{#            <strong>There are no pages present.</strong>#}
-{#        {% endif %}#}
-{#    </div>#}
-
-{#    <img src="{% static "images/rango.jpg" %}"#}
-{#         alt="Picture of Rango"/>#}
+<!--<h1>Rango says...</h1>-->
+<!--<div>-->
+<!--    here is the about page. <br />-->
+<!--    This tutorial has been put together by Wentao Jiang.<br />-->
+<!--    <p>Visits: {{ visits }}</p>-->
+<!--</div>-->
+<!--<img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />-->
+<!--<img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />-->
 {% endblock %}

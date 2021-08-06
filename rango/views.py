@@ -6,49 +6,9 @@ from django.contrib.auth.decorators import login_required
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from datetime import datetime
-from django import forms
-from django.forms import widgets
-
-
-# class UserForm(forms.Form):
-#     username = forms.CharField(min_length=4, label='Username', widget=widgets.TextInput(attrs={"class": "form-input  {% if user_form.username.errors.0 %}has-error{% endif %}"})) # 必须用required
-#     password = forms.CharField(min_length=6, label='Password', widget=widgets.PasswordInput(attrs={"class": "form-input"}))
-#     # password_confirm = forms.CharField(min_length=4, label='Password Confirm')
-#     email = forms.EmailField(label='Email', widget=widgets.TextInput(attrs={"class": "form-input"}))
-#     # phone = forms.CharField(label='Phone')
 
 
 def index(request):
-    # Query the database for a list of ALL categories currently stored.
-    # Order the categories by the number of likes in descending order.
-    # Retrieve the top 5 only -- or all if less than 5.
-    # Place the list in our context_dict dictionary (with our boldmessage!)
-    # that will be passed to the template engine.
-
-    category_list = Category.objects.order_by('-likes')[:50]
-    page_list = Page.objects.order_by('-views')[:50]
-    rank_list = Category.objects.order_by('rank')[:50]
-
-
-    # Construct a dictionary to pass to the template engine as its context.
-    # Note the key boldmessage matches to {{ boldmessage }} in the template!
-
-    context_dict = {}
-    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
-    context_dict['categories'] = category_list
-    context_dict['pages'] = page_list
-    context_dict['ranks'] = rank_list
-
-
-    visitor_cookie_handler(request)
-
-    # Return a rendered response to send to the client.
-    # We make use of the shortcut function to make our lives easier.
-    # Note that the first parameter is the template we wish to use.
-    return render(request, 'rango/index.html', context=context_dict)
-
-
-def about(request):
     context_dict = {}
     visitor_cookie_handler(request)
     likes_list = Category.objects.order_by('likes')[:5]
@@ -60,6 +20,40 @@ def about(request):
     context_dict['page'] = page_list
     context_dict['ranks'] = rank_list
     context_dict['views'] = views_list
+
+    return render(request, 'rango/index.html', context=context_dict)
+
+
+def about(request):
+
+    # Query the database for a list of ALL categories currently stored.
+    # Order the categories by the number of likes in descending order.
+    # Retrieve the top 5 only -- or all if less than 5.
+    # Place the list in our context_dict dictionary (with our boldmessage!)
+    # that will be passed to the template engine.
+    # type = request.GET.get('type', '')
+    # print(type)
+    category_list = Category.objects.order_by('-likes')[:50]
+    # category_list = Category.objects.get(region=category_region)
+
+    page_list = Page.objects.order_by('-views')[:50]
+    rank_list = Category.objects.order_by('rank')[:50]
+    #
+    #
+    # # Construct a dictionary to pass to the template engine as its context.
+    # # Note the key boldmessage matches to {{ boldmessage }} in the template!
+    #
+    context_dict = {}
+    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
+    context_dict['categories'] = category_list
+    context_dict['pages'] = page_list
+    context_dict['ranks'] = rank_list
+
+    visitor_cookie_handler(request)
+
+    # Return a rendered response to send to the client.
+    # We make use of the shortcut function to make our lives easier.
+    # Note that the first parameter is the template we wish to use.
     return render(request, 'rango/about.html', context=context_dict)
 
 

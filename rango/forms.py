@@ -48,7 +48,9 @@ class PageForm(forms.ModelForm):
         return cleaned_data
 
 class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(min_length=4, label='Username', widget=forms.TextInput(attrs={"class": "form-input  {% if user_form.username.errors.0 %}has-error{% endif %}"})) # 必须用required
+    password = forms.CharField(min_length=6, widget=forms.PasswordInput(attrs={"class": "form-input  {% if user_form.username.errors.0 %}has-error{% endif %}"}))
+    email = forms.EmailField(label='Email', widget=forms.TextInput(attrs={"class": "form-input"}))
 
     class Meta:
         model = User
