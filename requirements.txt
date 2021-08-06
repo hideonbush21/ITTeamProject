@@ -1,11 +1,11 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
-autograd @ git+git://github.com/HIPS/autograd@c6f630a5ec18bd30f1485bc0dbbccb8664c77510
+asgiref
+autograd
 boto3==1.18.15
 botocore==1.21.15
 CacheControl==0.12.6
 certifi==2021.5.30
 charset-normalizer==2.0.4
-Django @ file:///tmp/build/80754af9/django_1625585912945/work
+Django
 django-bootstrap3==15.0.0
 future==0.18.2
 idna==3.2
@@ -16,13 +16,12 @@ msgpack==1.0.2
 numpy==1.20.1
 Pillow==8.3.1
 polyline==1.4.0
-psycopg2 @ file:///opt/concourse/worker/volumes/live/d12e789f-5b6c-4947-7cc2-187f3a9c9696/volume/psycopg2_1612298599991/work
 python-dateutil==2.8.2
-pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
-requests==2.26.0
+pytz
+requests==2.24.0
 s3transfer==0.5.0
 six==1.16.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1624965014186/work
+sqlparse
+typing-extensions
 uritemplate==3.0.1
 urllib3==1.26.6
