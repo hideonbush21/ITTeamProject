@@ -165,16 +165,6 @@ def populate():
          'latitude': 103.776411,
          'content': "The National University of Singapore (NUS) is a national research university based in Singapore. Founded in 1905 as the Straits Settlements and Federated Malay States Government Medical School, NUS is the oldest higher education institution in Singapore. According to most rankings, it is considered to be one of the best universities in the Asia-Pacific and is among the top 40 universities in the world. NUS is a comprehensive research university, offering degree programmes in a wide range of disciplines at both the undergraduate and postgraduate levels, including in the sciences, medicine and dentistry, design and environment, law, arts and social sciences, engineering, business, computing, and music.",
          'rank': 11},
-        # {'title': 'How to Think like a Computer Scientist',
-        #  'url': 'http://www.greenteapress.com/thinkpython/',
-        #  'views': 19,
-        #  'content': 'UCL',
-        #  'rank': 2},
-        # {'title': 'Learn Python in 10 Minutes',
-        #  'url': 'http://www.korokithakis.net/tutorials/python/',
-        #  'views': 32,
-        #  'content': 'UoG',
-        #  'rank': 3}]
     ]
 
     qs_rank12 = [
@@ -499,7 +489,7 @@ def populate():
          'url': 'https://www.uq.edu.au/',
          'views': 55,
          'longitude':-27.497222,
-        'latitude':153.013056,
+         'latitude':153.013056,
          'content': "The University of Queensland (UQ, or Queensland University) is a public research university located primarily in Brisbane, the capital city of the Australian state of Queensland. Founded in 1909 by the Queensland parliament, UQ is one of the six sandstone universities, an informal designation of the oldest university in each state. The University of Queensland was ranked second nationally by the Australian Research Council in the latest research assessment and equal second in Australia based on the average of four major global university league tables. The University of Queensland is a founding member of edX, Australia's research-intensive Group of Eight and the global Universitas 21 network.",
          'rank': 47},
     ]
@@ -508,7 +498,7 @@ def populate():
          'url': 'https://ucsd.edu/',
          'views': 110,
          'longitude':32.8801,
-        'latitude':-117.234,
+         'latitude':-117.234,
          'content': "The University of California, San Diego (UC San Diego or, colloquially, UCSD[a]) is a public land-grant research university in San Diego, California. Established in 1960 near the pre-existing Scripps Institution of Oceanography, UC San Diego is the southernmost of the ten campuses of the University of California, and offers over 200 undergraduate and graduate degree programs, enrolling 31,842 undergraduate and 8,631 graduate students. The university occupies 2,178 acres (881 ha) near the coast of the Pacific Ocean, with the main campus resting on approximately 1,152 acres (466 ha). UC San Diego is ranked among the best universities in the world by major college and university rankings.",
          'rank': 48},
     ]
@@ -517,7 +507,7 @@ def populate():
          'url': 'https://www.lse.ac.uk/',
          'views': 551,
          'longitude':51.513889,
-        'latitude':-0.116667,
+         'latitude':-0.116667,
          'content': "The London School of Economics and Political Science (LSE or the LSE) is a public research university located in London, England, and a member institution of the federal University of London. Founded in 1895, by Fabian Society members Sidney Webb, Beatrice Webb, Graham Wallas, and George Bernard Shaw, LSE joined the University of London in 1900 and established its first degree courses under the auspices of the university in 1901.[7] LSE began awarding its degrees in its own name in 2008,[8] prior to which it awarded degrees of the University of London. The motto of the university is Rerum cognoscere causas which in Latin, means; To know the cause of things.",
          'rank': 49},
     ]
