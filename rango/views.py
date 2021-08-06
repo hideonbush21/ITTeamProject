@@ -27,6 +27,8 @@ def index(request):
 
     category_list = Category.objects.order_by('-likes')[:50]
     page_list = Page.objects.order_by('-views')[:50]
+    rank_list = Category.objects.order_by('rank')[:50]
+
 
     # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage matches to {{ boldmessage }} in the template!
@@ -35,6 +37,8 @@ def index(request):
     context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
+    context_dict['ranks'] = rank_list
+
 
     visitor_cookie_handler(request)
 
@@ -47,7 +51,15 @@ def index(request):
 def about(request):
     context_dict = {}
     visitor_cookie_handler(request)
+    likes_list = Category.objects.order_by('likes')[:5]
+    views_list = Category.objects.order_by('views')[:5]
+    rank_list = Category.objects.order_by('rank')[:5]
+    page_list = Page.objects.order_by('views')[:5]
     context_dict['visits'] = request.session['visits']
+    context_dict['likes'] = likes_list
+    context_dict['page'] = page_list
+    context_dict['ranks'] = rank_list
+    context_dict['views'] = views_list
     return render(request, 'rango/about.html', context=context_dict)
 
 

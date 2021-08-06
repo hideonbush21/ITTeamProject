@@ -8,11 +8,57 @@
 {% block body_block %}
 <link rel="stylesheet" href="{%static '../static/style/home.css'%}">
 <div class="box head-box">
+    <div class="box-content">
+        <h1 class="title-color">
+        Welcome to PickMeUp University Information Website!
+        </h1>
+    <h3 class="sub-title-color">Here, you can get a more extensive list of universities.
+    </h3>
+    <h3 class="sub-title-color">Check it out!</h3>
+    </div>
 </div>
 <div class="body-box">
-    <div class="box left-right-box"></div>
-    <div class="box center-box"></div>
-    <div class="box left-right-box"></div>
+    <div class="box left-right-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 in QS</h3>
+            {% if ranks %}
+                {% for item in ranks %}
+                    <div class="rank-list">
+                        <div class="circle-box">{{ item.rank }}</div>
+                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="box center-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 most viewers</h3>
+            {% if views %}
+                {% for item in views %}
+                    <div class="rank-list">
+                        <img class="icon" src="{% static 'images/view.png' %}" alt="Picture of Rango" />
+                        <div class="icon-box">{{ item.views }}</div>
+                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="box left-right-box">
+        <div class="box-content">
+            <h3 class="title-color">Top 5 most favourite</h3>
+            {% if likes %}
+                {% for item in likes %}
+                    <div class="rank-list">
+                        <img class="icon" src="{% static 'images/heart.png' %}" alt="Picture of Rango" />
+                        <div class="icon-box">{{ item.likes }}</div>
+                        <div><a class="list" href="{% url 'rango:show_category' item.slug %}">{{ item.name }}</a></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 </div>
 
 <!--<h1>Rango says...</h1>-->

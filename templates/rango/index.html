@@ -15,17 +15,17 @@
 
     </div>
     <div class="box body-box">
-                {% if categories %}
+        {% if ranks %}
 
         <table class="altrowstable" id="alternatecolor">
             <tr>
 	            <th>Rank</th><th>University</th><th>Region</th>
             </tr>
 
-            {% for category in categories %}
+            {% for category in ranks %}
                 <tr>
                     <td>{{ category.rank }}</td>
-                    <td><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></td>
+                    <td><a class="list" href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></td>
                     <td>America</td>
                 </tr>
             {% endfor %}
@@ -34,18 +34,6 @@
          {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
-
-<!--        {% if categories %}-->
-<!--            <ul>-->
-<!--                {% for category in categories %}-->
-<!--                <div>{{ category.rank }}</div>-->
-<!--                    <div>-->
-<!--                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.rank }}{{ category.name }}</a></div>-->
-<!--                {% endfor %}-->
-<!--            </ul>-->
-<!--        {% else %}-->
-<!--            <strong>There are no categories present.</strong>-->
-<!--        {% endif %}-->
     </div>
 
 {#    <div>#}

@@ -64,15 +64,13 @@
     text-align: center;
     line-height: 30px;
 }
-a{
-    text-decoration: none;
-}
-a:link{
+
+register-btn-style:link{
     color: #666666;
 }
-a:visited{
+register-btn-style:visited{
     color: #666666;
 }
-a:hover{
+register-btn-style:hover{
     color: #F59A23;
 }

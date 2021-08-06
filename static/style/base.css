@@ -12,11 +12,40 @@ ul{
     list-style-type: none;
     background-color: #F59A23;
 }
-ul li a{
+ul li{
     float:left;
     margin: 15px;
-    text-decoration: none;
-    color: white;
     text-align: center;
     width: 80px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+nav-link:link{
+    color: white;
+}
+
+nav-link:visited{
+    color: white;
+}
+nav-link:hover{
+    color: #666666;
+}
+
+.list{
+    text-decoration: none;
+}
+
+.list:link{
+    color: #666666;
+}
+
+.list:visited{
+    color: #666666;
+}
+.list:hover{
+    color: #F59A23;
 }
