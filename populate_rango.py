@@ -391,61 +391,61 @@ def populate():
     ]
 
     cats = {
-        'Massachusetts Institute of Technology (MIT)': {'pages': qs_rank1, 'views': 128, 'likes': 64},
-        'University of Oxford': {'pages': qs_rank2, 'views': 112, 'likes': 54},
-        'Stanford University': {'pages': qs_rank3, 'views': 176, 'likes': 1124},
-        'University of Cambridge': {'pages': qs_rank4, 'views': 454, 'likes': 767},
-        'Harvard University': {'pages': qs_rank5, 'views': 123, 'likes': 989},
-        'California Institute of Technology (Caltech)': {'pages': qs_rank6, 'views': 565, 'likes': 988},
-        'Imperial College London': {'pages': qs_rank7, 'views': 1281, 'likes': 646},
-        'ETH Zurich - Swiss Federal Institute of Technology': {'pages': qs_rank8, 'views': 756, 'likes': 5117},
-        'UCL': {'pages': qs_rank9, 'views': 777, 'likes': 4396},
-        'University of Chicago': {'pages': qs_rank10, 'views': 655, 'likes': 641},
+        'Massachusetts Institute of Technology (MIT)': {'pages': qs_rank1, 'views': 128, 'likes': 64, 'rank': 1},
+        'University of Oxford': {'pages': qs_rank2, 'views': 112, 'likes': 54, 'rank': 2},
+        'Stanford University': {'pages': qs_rank3, 'views': 176, 'likes': 1124, 'rank': 3},
+        'University of Cambridge': {'pages': qs_rank4, 'views': 454, 'likes': 767, 'rank': 4},
+        'Harvard University': {'pages': qs_rank5, 'views': 123, 'likes': 989, 'rank': 5},
+        'California Institute of Technology (Caltech)': {'pages': qs_rank6, 'views': 565, 'likes': 988, 'rank': 6},
+        'Imperial College London': {'pages': qs_rank7, 'views': 1281, 'likes': 646, 'rank': 7},
+        'ETH Zurich - Swiss Federal Institute of Technology': {'pages': qs_rank8, 'views': 756, 'likes': 5117, 'rank': 8},
+        'UCL': {'pages': qs_rank9, 'views': 777, 'likes': 4396, 'rank': 9},
+        'University of Chicago': {'pages': qs_rank10, 'views': 655, 'likes': 641, 'rank': 10},
 
-        'National University of Singapore (NUS)': {'pages': qs_rank11, 'views': 655, 'likes': 641},
-        'Nanyang Technological University, Singapore (NTU)': {'pages': qs_rank12, 'views': 141, 'likes': 1641},
-        'University of Pennsylvania': {'pages': qs_rank13, 'views': 141, 'likes': 1641},
-        'EPFL': {'pages': qs_rank14, 'views': 141, 'likes': 1641},
-        'Yale University': {'pages': qs_rank15, 'views': 141, 'likes': 1641},
-        'The University of Edinburgh': {'pages': qs_rank16, 'views': 141, 'likes': 1641},
-        'Tsinghua University': {'pages': qs_rank17, 'views': 141, 'likes': 1641},
-        'Peking University': {'pages': qs_rank18, 'views': 141, 'likes': 1641},
-        'Columbia University': {'pages': qs_rank19, 'views': 141, 'likes': 1641},
-        'Princeton University': {'pages': qs_rank20, 'views': 141, 'likes': 1641},
-        'Cornell University': {'pages': qs_rank21, 'views': 141, 'likes': 1641},
-        'The University of Hong Kong': {'pages': qs_rank22, 'views': 141, 'likes': 1641},
-        'The University of Tokyo': {'pages': qs_rank23, 'views': 141, 'likes': 1641},
-        'University of Michigan-Ann Arbor': {'pages': qs_rank24, 'views': 141, 'likes': 1641},
-        'Johns Hopkins University': {'pages': qs_rank25, 'views': 141, 'likes': 1641},
-        'University of Toronto': {'pages': qs_rank26, 'views': 141, 'likes': 1641},
-        'McGill University': {'pages': qs_rank27, 'views': 141, 'likes': 1641},
-        'The Australian National University': {'pages': qs_rank28, 'views': 141, 'likes': 1641},
-        'The University of Manchester': {'pages': qs_rank29, 'views': 141, 'likes': 1641},
-        'Northwestern University': {'pages': qs_rank30, 'views': 141, 'likes': 1641},
-        'Fudan University': {'pages': qs_rank31, 'views': 141, 'likes': 1641},
-        'University of California,Berkeley(UCB)': {'pages': qs_rank32, 'views': 141, 'likes': 1641},
-        'Kyoto University': {'pages': qs_rank33, 'views': 141, 'likes': 1641},
-        'The Hong Kong University of Science and Technology': {'pages': qs_rank34, 'views': 141, 'likes': 1641},
-        'Kings College London': {'pages': qs_rank35, 'views': 141, 'likes': 1641},
-        'Seoul National University': {'pages': qs_rank36, 'views': 141, 'likes': 1641},
-        'The University of Melbourne': {'pages': qs_rank37, 'views': 141, 'likes': 1641},
-        'The University of Sydney': {'pages': qs_rank38, 'views': 141, 'likes': 1641},
-        'The Chinese University of Hong Kong (CUHK)': {'pages': qs_rank39, 'views': 141, 'likes': 1641},
-        'University of California, Los Angeles (UCLA)': {'pages': qs_rank40, 'views': 141, 'likes': 1641},
-        'KAIST - Korea Advanced Institute of Science & Technology': {'pages': qs_rank41, 'views': 141, 'likes': 1641},
-        'New York University (NYU)': {'pages': qs_rank42, 'views': 141, 'likes': 1641},
-        'The University of New South Wales (UNSW Sydney)': {'pages': qs_rank43, 'views': 141, 'likes': 1641},
-        'Université PSL': {'pages': qs_rank44, 'views': 141, 'likes': 1641},
-        'Zhejiang University': {'pages': qs_rank45, 'views': 141, 'likes': 1641},
-        'University of British Columbia': {'pages': qs_rank46, 'views': 141, 'likes': 1641},
-        'The University of Queensland': {'pages': qs_rank47, 'views': 141, 'likes': 1641},
-        'University of California, San Diego (UCSD)': {'pages': qs_rank48, 'views': 141, 'likes': 1641},
-        'The London School of Economics and Political Science (LSE)': {'pages': qs_rank49, 'views': 141, 'likes': 1641},
-        'Shanghai Jiao Tong University': {'pages': qs_rank50, 'views': 141, 'likes': 1641},
+        'National University of Singapore (NUS)': {'pages': qs_rank11, 'views': 655, 'likes': 641, 'rank': 11},
+        'Nanyang Technological University, Singapore (NTU)': {'pages': qs_rank12, 'views': 141, 'likes': 1641, 'rank': 12},
+        'University of Pennsylvania': {'pages': qs_rank13, 'views': 141, 'likes': 1641, 'rank': 13},
+        'EPFL': {'pages': qs_rank14, 'views': 141, 'likes': 1641, 'rank': 14},
+        'Yale University': {'pages': qs_rank15, 'views': 141, 'likes': 1641, 'rank': 15},
+        'The University of Edinburgh': {'pages': qs_rank16, 'views': 141, 'likes': 1641, 'rank': 16},
+        'Tsinghua University': {'pages': qs_rank17, 'views': 141, 'likes': 1641, 'rank': 17},
+        'Peking University': {'pages': qs_rank18, 'views': 141, 'likes': 1641, 'rank': 18},
+        'Columbia University': {'pages': qs_rank19, 'views': 141, 'likes': 1641, 'rank': 19},
+        'Princeton University': {'pages': qs_rank20, 'views': 141, 'likes': 1641, 'rank': 20},
+        'Cornell University': {'pages': qs_rank21, 'views': 141, 'likes': 1641, 'rank': 21},
+        'The University of Hong Kong': {'pages': qs_rank22, 'views': 141, 'likes': 1641, 'rank': 22},
+        'The University of Tokyo': {'pages': qs_rank23, 'views': 141, 'likes': 1641, 'rank': 23},
+        'University of Michigan-Ann Arbor': {'pages': qs_rank24, 'views': 141, 'likes': 1641, 'rank': 24},
+        'Johns Hopkins University': {'pages': qs_rank25, 'views': 141, 'likes': 1641, 'rank': 25},
+        'University of Toronto': {'pages': qs_rank26, 'views': 141, 'likes': 1641, 'rank': 26},
+        'McGill University': {'pages': qs_rank27, 'views': 141, 'likes': 1641, 'rank': 27},
+        'The Australian National University': {'pages': qs_rank28, 'views': 141, 'likes': 1641, 'rank': 28},
+        'The University of Manchester': {'pages': qs_rank29, 'views': 141, 'likes': 1641, 'rank': 29},
+        'Northwestern University': {'pages': qs_rank30, 'views': 141, 'likes': 1641, 'rank': 30},
+        'Fudan University': {'pages': qs_rank31, 'views': 141, 'likes': 1641, 'rank': 31},
+        'University of California,Berkeley(UCB)': {'pages': qs_rank32, 'views': 141, 'likes': 1641, 'rank': 32},
+        'Kyoto University': {'pages': qs_rank33, 'views': 141, 'likes': 1641, 'rank': 33},
+        'The Hong Kong University of Science and Technology': {'pages': qs_rank34, 'views': 141, 'likes': 1641, 'rank': 34},
+        'Kings College London': {'pages': qs_rank35, 'views': 141, 'likes': 1641, 'rank': 35},
+        'Seoul National University': {'pages': qs_rank36, 'views': 141, 'likes': 1641, 'rank': 36},
+        'The University of Melbourne': {'pages': qs_rank37, 'views': 141, 'likes': 1641, 'rank': 37},
+        'The University of Sydney': {'pages': qs_rank38, 'views': 141, 'likes': 1641, 'rank': 38},
+        'The Chinese University of Hong Kong (CUHK)': {'pages': qs_rank39, 'views': 141, 'likes': 1641, 'rank': 39},
+        'University of California, Los Angeles (UCLA)': {'pages': qs_rank40, 'views': 141, 'likes': 1641, 'rank': 40},
+        'KAIST - Korea Advanced Institute of Science & Technology': {'pages': qs_rank41, 'views': 141, 'likes': 1641, 'rank': 41},
+        'New York University (NYU)': {'pages': qs_rank42, 'views': 141, 'likes': 1641, 'rank': 42},
+        'The University of New South Wales (UNSW Sydney)': {'pages': qs_rank43, 'views': 141, 'likes': 1641, 'rank': 43},
+        'Université PSL': {'pages': qs_rank44, 'views': 141, 'likes': 1641, 'rank': 44},
+        'Zhejiang University': {'pages': qs_rank45, 'views': 141, 'likes': 1641, 'rank': 45},
+        'University of British Columbia': {'pages': qs_rank46, 'views': 141, 'likes': 1641, 'rank': 46},
+        'The University of Queensland': {'pages': qs_rank47, 'views': 141, 'likes': 1641, 'rank': 47},
+        'University of California, San Diego (UCSD)': {'pages': qs_rank48, 'views': 141, 'likes': 1641, 'rank': 48},
+        'The London School of Economics and Political Science (LSE)': {'pages': qs_rank49, 'views': 141, 'likes': 1641, 'rank': 49},
+        'Shanghai Jiao Tong University': {'pages': qs_rank50, 'views': 141, 'likes': 1641, 'rank': 50},
     }
 
     for cat, cat_data in cats.items():
-        c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
+        c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'], rank=cat_data['rank'])
         for p in cat_data['pages']:
             add_page(c, p['title'], p['url'], content=p['content'], rank=p['rank'], views=p['views'])
 
@@ -465,10 +465,11 @@ def add_page(cat, title, url, content='', rank=0, views=0):
     return p
 
 
-def add_cat(name, views=0, likes=0):
+def add_cat(name, views=0, likes=0, rank=0):
     c = Category.objects.get_or_create(name=name)[0]
     c.views = views
     c.likes = likes
+    c.rank = rank
     c.save()
     return c
 

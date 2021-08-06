@@ -12,7 +12,7 @@ from django.forms import widgets
 
 class UserForm(forms.Form):
     username = forms.CharField(min_length=4, label='Username', widget=widgets.TextInput(attrs={"class": "form-input  {% if user_form.username.errors.0 %}has-error{% endif %}"})) # 必须用required
-    password = forms.CharField(min_length=6, label='Password', widget=widgets.TextInput(attrs={"class": "form-input"}))
+    password = forms.CharField(min_length=6, label='Password', widget=widgets.PasswordInput(attrs={"class": "form-input"}))
     # password_confirm = forms.CharField(min_length=4, label='Password Confirm')
     email = forms.EmailField(label='Email', widget=widgets.TextInput(attrs={"class": "form-input"}))
     # phone = forms.CharField(label='Phone')

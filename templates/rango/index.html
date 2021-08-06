@@ -6,28 +6,46 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Rango says...</h1>
-    <div>
-        {% if user.is_authenticated %}
-            howdy {{ user.username }}!
-        {% else %}
-            hey there partner!
-        {% endif %}
-        <br/>
-        <strong>{{ boldmessage }}</strong>
-    </div>
+<link rel="stylesheet" href="{%static '../static/style/home.css'%}">
+<link rel="stylesheet" href="{%static '../static/style/table.css'%}">
+<script src="{%static '../static/js/table.js'%}" type="text/javascript" charset="utf-8"></script>
 
-    <div>
-        <h2>Most Liked Categories</h2>
-        {% if categories %}
-            <ul>
-                {% for category in categories %}
-                    <div><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></div>
-                {% endfor %}
-            </ul>
-        {% else %}
+
+    <div class="box head-box">
+
+    </div>
+    <div class="box body-box">
+                {% if categories %}
+
+        <table class="altrowstable" id="alternatecolor">
+            <tr>
+	            <th>Rank</th><th>University</th><th>Region</th>
+            </tr>
+
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.rank }}</td>
+                    <td><a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a></td>
+                    <td>America</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
+
+<!--        {% if categories %}-->
+<!--            <ul>-->
+<!--                {% for category in categories %}-->
+<!--                <div>{{ category.rank }}</div>-->
+<!--                    <div>-->
+<!--                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.rank }}{{ category.name }}</a></div>-->
+<!--                {% endfor %}-->
+<!--            </ul>-->
+<!--        {% else %}-->
+<!--            <strong>There are no categories present.</strong>-->
+<!--        {% endif %}-->
     </div>
 
 {#    <div>#}

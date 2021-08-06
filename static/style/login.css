@@ -64,3 +64,15 @@
     text-align: center;
     line-height: 30px;
 }
+a{
+    text-decoration: none;
+}
+a:link{
+    color: #666666;
+}
+a:visited{
+    color: #666666;
+}
+a:hover{
+    color: #F59A23;
+}

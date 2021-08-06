@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    height: 100%;
+    weight: 100%;
+    background-color: #F2F2F2;
+}
+ul{
+    margin: 0;
+    height: 45px;
+    padding: 0;
+    width:100%;
+    list-style-type: none;
+    background-color: #F59A23;
+}
+ul li a{
+    float:left;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 80px;
+}

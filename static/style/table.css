@@ -1,0 +1,46 @@
+table.altrowstable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #FDF9F4;
+	border-collapse: collapse;
+    width: 100%;
+}
+
+table.altrowstable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+    border-color: #efefef;
+	background: #FBE2BD;
+    color: #666666;
+}
+
+table.altrowstable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #FDF9F4;
+    height: 25px;
+    text-align: center;
+}
+
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color: #666666;
+}
+a:visited{
+    color: #666666;
+}
+a:hover{
+    color: #F59A23;
+}

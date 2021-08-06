@@ -10,27 +10,28 @@
 {% endblock %}
 
 {% block body_block %}
+<link rel="stylesheet" href="{%static '../static/style/home.css'%}">
     {% if category %}
-        <h1>{{ category.name }}</h1>
         {% if pages %}
-
             {% for page in pages %}
-                {#                <br>#}
+                <div class="box head-box">
+                    <div class="box-content">
+                        <h2 style="color: #F59A23">{{ category.name }}</h2>
+                        <div><b>rank : {{ page.rank }}</b></div>
+                        <div><b>views : {{ page.views }}</b></div>
+                    </div>
                 </div>
-                <div><b>rank : {{ page.rank }}</b></div>
-
-                <div><b>views : {{ page.views }}</b></div>
-
-                <div><text>{{ page.content }}</text>`<a href="{{ page.url }}">{{ page.title }}</a></div>
-
-
+                <div class="box head-box">
+                    <div class="box-content">
+                        <div><h2>Overview</h2></div>
+                        <div>{{ page.content }}</div>
+                        <a href="{{ page.url }}">{{ page.title }}</a>
+                    </div>
+                </div>
             {% endfor %}
-
-            </ul>
         {% else %}
             <strong>No pages currently in category.</strong>
         {% endif %}
-        <hr>
         {% if user.is_authenticated %}
             <a href="{% url 'rango:add_page' category.slug %}">Add Page</a> <br/>
         {% endif %}
